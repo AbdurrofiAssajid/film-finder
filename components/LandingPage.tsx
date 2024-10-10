@@ -36,7 +36,7 @@ const LandingPage: React.FC = () => {
   };
 
   useEffect(() => {
-    searchMovies("Batman").then(setMovies);
+    searchMovies("Harry Potter").then(setMovies);
   }, []);
 
   const handleSearch = async () => {
