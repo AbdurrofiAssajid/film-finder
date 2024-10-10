@@ -8,9 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      boxShadow: {
+        neu: "5px 5px 7px #1c1d1f, -5px -5px 7px #222527",
+        'neu-hover': "5px 5px 7px #1c1d1f, -5px -5px 7px #222527",
+      },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+        roboto: ['Roboto Slab', 'serif'],
       },
     },
   },
