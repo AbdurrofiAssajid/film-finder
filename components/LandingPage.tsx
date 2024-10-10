@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import { FaSearch } from "react-icons/fa";
+import {motion} from 'framer-motion'
+
 
 // Define types
 interface Movie {
@@ -45,7 +47,17 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-   <div className="app py-16 flex flex-col items-center justify-center">
+   <motion.section 
+   className="app py-16 flex flex-col items-center justify-center"
+   initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1.5,
+      }}>
   <h1 className="text-6xl font-bold tracking-wide bg-clip-text text-transparent bg-blue-950 mb-6">
     Film Finder
   </h1>
@@ -80,7 +92,7 @@ const LandingPage: React.FC = () => {
       <h2 className="text-lg text-[#f9d3b4] font-raleway">No movies found</h2>
     </div>
   )}
-</div>
+</motion.section>
   );
 };
 

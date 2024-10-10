@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion'
 
 interface Movie {
   imdbID: string;
@@ -14,7 +15,17 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   return (
-     <div className="w-[310px] h-[460px] m-6 relative rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-105">
+     <motion.section 
+     className="w-[310px] h-[460px] m-6 relative rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-105"
+     initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1.5,
+      }}>
       <div className="absolute top-0 left-0 w-full p-4 text-slate-700 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
         <p>{movie.Year}</p>
       </div>
@@ -27,7 +38,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         <span className="uppercase text-xs tracking-widest text-slate-700 font-medium">{movie.Type}</span>
         <h3 className="mt-2 font-serif text-slate-600 italic">{movie.Title}</h3>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
