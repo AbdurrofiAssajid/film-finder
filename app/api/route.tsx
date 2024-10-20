@@ -1,3 +1,4 @@
+'use server'
 import { NextResponse } from 'next/server';
 
 const API_URL = `http://www.omdbapi.com?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;
